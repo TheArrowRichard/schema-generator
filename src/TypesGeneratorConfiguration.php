@@ -109,6 +109,7 @@ final class TypesGeneratorConfiguration implements ConfigurationInterface
                     ->children()
                         ->booleanNode('useCollection')->defaultTrue()->info('Use Doctrine\'s ArrayCollection instead of standard arrays')->end()
                         ->scalarNode('resolveTargetEntityConfigPath')->defaultNull()->info('The Resolve Target Entity Listener config file pass')->end()
+                        ->scalarNode('resolveTargetEntityConfigType')->defaultValue("XML")->values(['XML', 'YAML'])->info('The Resolve Target Entity Listener config file type')->end()
                         ->arrayNode('inheritanceAnnotations')
                             ->info('Doctrine inheritance annotations (if set, no other annotations are generated)')
                             ->prototype('scalar')->end()
